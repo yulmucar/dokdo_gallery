@@ -17,6 +17,7 @@ body {
     color: #333;
     line-height: 1;
     font-family: 'Noto Sans KR', sans-serif;
+    min-width: 1920px;
 }
 #wrap {
     position: relative;
@@ -479,19 +480,25 @@ body {
     padding-bottom: 15px;
 }
 .footer .dokdologo2 {
+    text-align: center;
+}
+.footer .dokdologo2 figure {
     position: absolute;
     top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
-.footer .dokdologo2 figure {
+.footer .dokdologo2 figure img {
     width: 177px;
     height: 75px;
+    object-fit: cover;
 }
+
 .footer .dokdologo2 p {
     position: absolute;
-    top: 60%;
-    left: 50%;
+    display: c;
     font-size: 28px;
-    transform: translate(-50%, -50%);
+    overflow: hidden;
+    color: #fff;
+
 }
