@@ -1,5 +1,8 @@
 @charset "uft-8";
-
+@keyframes scale1 {
+    0%   {transform: scale(0);}
+    100%  {transform: scale(1);}
+}
 * {
     margin: 0;
     padding: 0;
@@ -102,7 +105,16 @@ body {
     color: white;
     z-index: 9;
 }
-.main_visual .swiper-button-next:after, .swiper-button-prev:after {
+.main_visual .swiper-button-next {
+    right: 100px;
+    width: 105px;
+    height: 105px;
+    background-color: #00000018;
+    border-radius : 50px;
+    color: white;
+    z-index: 9;
+}
+.main_visual .swiper-button-next:after, .main_visual .swiper-button-prev:after {
     font-size: 30px;
 }
 .main_visual .visual .dokdologo {
@@ -141,14 +153,68 @@ body {
     color:#fff;
     font-size: 15px;
     display: inline-block;
-    padding: 20px 40px;
+    padding: 30px 40px;
     overflow: hidden;
 }
+
+/* .main_visual .visual .dokdologo .btn a {
+    background-color: transparent;
+    color: #fff;
+    padding: 20px 39px;
+    border-radius: 35px;
+    width: fit-content;
+    display: inline-block;
+    text-align: center;
+    transition: 0.5s;
+    font-size: 15px;
+    border: 3px solid #fff;
+} */
+
+/* 컬러 올라오는거 시작 */ 
+.main_visual .visual .dokdologo .btn a {
+    width: fit-content;
+    border-color: #ffffff;
+    color: #ffffff;
+    padding: 30px 39px;
+    border-radius: 50px;
+    border: 3px solid #fff;
+    font-weight: 400;
+    font-size: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.main_visual .visual .dokdologo .btn a, 
+.main_visual .visual .dokdolog .btn a:hover {
+    color: #fff !important;
+    background-color: transparent;
+    text-shadow: none;
+}
+.main_visual .visual .dokdologo .btn a:hover:before, 
+.btn a .color:hover:before {
+    bottom: 0%;
+    top: auto;
+    height: 100%;
+}
+.main_visual .visual .dokdologo .btn a:before {
+    display: block;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 0px;
+    width: 100%;
+    z-index: -1;
+    content: '';
+    color: #000 !important;
+    background: #09847F;
+    transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}    
+
+/* 컬러 올라오는거 끝 */    
 .main_visual .visual .dokdologo .btn a img {
     width: 12px;
     height: 12px;
-    margin: 0 0 0 15px;
-    
+    margin: 0 0 0 10px;
 }
 .main_visual .chak a {
     background-color: #09847F;
@@ -206,10 +272,40 @@ body {
     border: 3px solid #09847F;
     border-radius: 50px;
     color: #09847F;
-    padding: 20px 40px;
-    display: flex;
-    justify-content: center;
+    padding: 20px 39px;
+    font-weight: 400;
+    position: relative;
+    overflow: hidden;
 }
+/* 색 올라오는거 */
+.content .info_wrap .info-up a,
+.content .info_wrap .info-up a:hover{
+    content: '';
+    color: #09847F !important;
+    background-color: transparent;
+    text-shadow: none;
+}
+.content .info_wrap .info-up a:hover,
+.info-up a .color:hover::before {
+    bottom: 0%;
+    top: auto;
+    height: 100%;
+}
+.content .info_wrap .info-up a .color:hover::before {
+    display: block;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 0px;
+    width: 100%;
+    z-index: -1;
+    content: '';
+    color: #000 !important;
+    background: #09847F;
+    transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+/* 색 올라오는거 끝 */
+
 .content .info_wrap .info-up a img {
     width: 12px;
     height: 12px;
@@ -289,6 +385,18 @@ body {
     margin-bottom: 150px;
     position: relative;
 }
+.notice_inn::after{
+    content: '';
+    display: inline-block;
+    width: 94px;
+    height: 94px;
+    border-radius: 50%;
+    border: 52px solid #09847F;
+    position: absolute;
+    left: 400px;
+    top:-80px;
+    z-index: -1;
+}
 .notice_inn .notice {
     width: 507px;
     /* background-color: #09847F; */
@@ -307,6 +415,7 @@ body {
     width: 1200px;
     position: static;
 }
+
 .notice_inn .swiper-slide {
     width: 393px;
     height: 550px;
@@ -315,7 +424,7 @@ body {
 .notice_inn .swiper-slide div {
     width: 393px;
     height: 521px;
-    background-color: #f1f1f1;
+    background-color: #f5f5f5;
     border-radius: 40px;
     padding: 52px 44px;
     display: flex;
@@ -352,29 +461,67 @@ body {
     line-height: 1.4;
     
 }
-.notice_inn .swiper-button-next {
+/* .notice_inn .notice figure:nth-child(1) {
+    position: absolute;
+    top: 418px;
+    left: 45px;
+    z-index: 999;
+}
+.notice_inn .notice figure:nth-child(2) {
+    position: absolute;
+    top: 418px;
+    left: 118px;
+    z-index: 999;
+} */
+/* .notice_inn .swiper-button-next2 {
     position: absolute;
     width: 50px;
     height: 50px;
+    top:0;
     left: 100px;
     background-color: #434250;
     color:#fff;
     border-radius: 50px;
-    margin: 120px 0;
+    margin: 400px 0;
 }
-.notice_inn .swiper-button-next:after, .swiper-button-prev:after {
-    font-size: 12px;
+.notice_inn .swiper-button-prev2 {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top:0;
+    left: 30px;
+    background-color: #434250;
+    color:#fff;
+    border-radius: 50px;
+    margin: 400px 0;
+} */
+.notice_inn .swiper-button-next {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top:0;
+    left: 100px;
+    background-color: #434250;
+    color:#fff;
+    border-radius: 50px;
+    margin: 400px 0;
+    
 }
 .notice_inn .swiper-button-prev {
     position: absolute;
     width: 50px;
     height: 50px;
+    top:0;
     left: 30px;
     background-color: #434250;
     color:#fff;
     border-radius: 50px;
-    margin: 120px 0;
+    margin: 400px 0;
 }
+.notice_inn .swiper-button-next:after, .notice_inn .swiper-button-prev:after {
+    font-size: 20px;
+}
+
 
 /* ✅✅ .banner_wrap ---------------------- */
 
@@ -426,13 +573,14 @@ body {
     width: 100%;
     margin: 0 auto;
     position: relative;
+    
 }
 .footer .dokdo_bg {
     height: 100%;
     position: static;
     border-radius: 200px 0 0;
     overflow: hidden;
-    margin-top: -100px;
+    margin-top: -100px; 
 }
 .footer .dokdo_bg figure {
     height: 100%;
@@ -480,15 +628,16 @@ body {
     padding-bottom: 15px;
 }
 .footer .dokdologo2 {
-    text-align: center;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.footer .dokdologo2 figure {
+.footer .dokdologo2 figure img {
     position: absolute;
     top: 30%;
     left: 50%;
-    transform: translate(-50%, -50%);
-}
-.footer .dokdologo2 figure img {
+    transform: translate(-30%, -50%);
     width: 177px;
     height: 75px;
     object-fit: cover;
@@ -496,9 +645,61 @@ body {
 
 .footer .dokdologo2 p {
     position: absolute;
-    display: c;
+    top:40%;
+    left: 50%;
+    transform: translate(-40%, -50%);
     font-size: 28px;
     overflow: hidden;
     color: #fff;
-
+    opacity: 0.8;
+}
+.footer .dokdologo2 .cir p:nth-child(1) {
+    color: #fff;
+    position: absolute;
+    top:38%;
+    left: 34.5%;
+    font-size: 16px;
+}
+.footer .dokdologo2 .cir p:nth-child(2) {
+    color: #fff;
+    position: absolute;
+    top:50%;
+    left: 58%;
+    font-size: 16px;
+}
+.footer .dokdologo2 .cir .cir1 {
+    position: absolute;
+    top: 42%;
+    left: 34.5%;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+    opacity: 1;
+    transition: all 1s;
+}
+.footer .dokdologo2 .cir .cir1:hover {
+    background-color: #fff;
+    border-radius: 50%;
+    transition: all 1s;
+    transform: scale(5);
+    opacity: 0.1;
+}
+.footer .dokdologo2 .cir .cir2 {
+    position: absolute;
+    top: 54%;
+    left: 58%;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+    opacity: 1;
+    transition: all 1s;
+}
+.footer .dokdologo2 .cir .cir2:hover {
+    background-color: #fff;
+    border-radius: 50%;
+    transition: all 1s;
+    transform: scale(5);
+    opacity: 0.1;
 }
